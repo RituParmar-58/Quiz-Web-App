@@ -1,12 +1,22 @@
-# Getting Started with Create React App
+# Quiz Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web-based quiz application built with Express on the backend and React on the frontend. The application allows users to select a quiz category, answer multiple-choice questions, and receive their score along with the total time taken at the end of the quiz.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Four categories of quizzes: JavaScript, React, CSS, and HTML.
+Each category contains multiple-choice questions.
+Users can select multiple options for questions that allow multiple correct answers.
+Users receive real-time feedback on their answers after completing the quiz.
+At the end of the quiz, users are shown their total score and the time taken to complete the quiz.
 
-### `npm start`
+## Backend Overview
+
+The backend is built using Express.js and serves the quiz data and handles the quiz state for the user.
+
+### Key Components:
+
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

@@ -4,17 +4,90 @@ This is a web-based quiz application built with Express on the backend and React
 
 ## Features
 
-Four categories of quizzes: JavaScript, React, CSS, and HTML.
-Each category contains multiple-choice questions.
-Users can select multiple options for questions that allow multiple correct answers.
-Users receive real-time feedback on their answers after completing the quiz.
-At the end of the quiz, users are shown their total score and the time taken to complete the quiz.
+Four categories of quizzes: JavaScript, React, CSS, and HTML.\
+Each category contains multiple-choice questions.\
+Users can select multiple options for questions that allow multiple correct answers.\
+Users receive real-time feedback on their answers after completing the quiz.\
+At the end of the quiz, users are shown their total score and the time taken to complete the quiz.\
 
 ## Backend Overview
 
 The backend is built using Express.js and serves the quiz data and handles the quiz state for the user.
 
 ### Key Components:
+
+**Quiz Categories:** Four quiz categories (JavaScript, React, CSS, and HTML) are predefined with their respective questions and correct answers.\
+
+**API Routes:** \
+
+/start-quiz: Fetches the questions for the selected category.\
+/submit-question: Submits the user's answer and returns if it is correct.\
+/finish-quiz: Returns the final score and total time taken for the quiz.\
+
+### Backend Setup: 
+
+CORS is enabled to allow requests from the frontend.\
+Body Parsing is enabled for handling JSON data in API requests.\
+
+## Frontend Overview
+
+The frontend is built with React and uses Axios for making API calls to the Express backend.\
+
+### Components:
+**App Component:** The main application component that manages the flow between different screens (Home, Quiz, Result). \
+**Home Component:** The starting screen where users can select a category and start the quiz. \
+**Quiz Component:** Displays the current question, allows users to select an answer, and tracks the quiz progress. \
+**Result Component:** Shows the final score and time taken, with an option to restart the quiz. \
+
+### State Management:
+The app uses useState to manage the current screen, questions, score, and total time taken. \
+The quiz progresses through different states: home → quiz → result. \
+
+## How to Run the Project
+
+**Prerequisites:**
+Node.js (v12+) \
+npm or yarn (for package management) \
+
+Steps:
+
+**Clone the repository:**
+
+git clone https://github.com/RituParmar-58/Quiz-Web-App.git
+cd quiz-web-app
+
+Install the dependencies for both backend and frontend:
+
+**Backend:**
+
+bash
+Copy code
+cd backend
+npm install
+
+**Frontend:**
+
+
+cd frontend
+npm install
+
+**Start the backend server:**
+
+
+cd backend
+npm start
+The backend will run on [http://localhost:3001](http://localhost:3001).
+
+**Start the frontend server:**
+
+
+cd frontend
+npm start
+The frontend will run on [http://localhost:3000](http://localhost:3000).
+
+
+
+
 
 
 

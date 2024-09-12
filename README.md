@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Quiz Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web-based quiz application built with Express on the backend and React on the frontend. The application allows users to select a quiz category, answer multiple-choice questions, and receive their score along with the total time taken at the end of the quiz.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Four categories of quizzes: JavaScript, React, CSS, and HTML.\
+Each category contains multiple-choice questions.\
+Users can select multiple options for questions that allow multiple correct answers.\
+Users receive real-time feedback on their answers after completing the quiz.\
+At the end of the quiz, users are shown their total score and the time taken to complete the quiz.
 
-### `npm start`
+## Backend Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The backend is built using Express.js and serves the quiz data and handles the quiz state for the user.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Key Components:
 
-### `npm test`
+**Quiz Categories:** Four quiz categories (JavaScript, React, CSS, and HTML) are predefined with their respective questions and correct answers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**API Routes:** 
 
-### `npm run build`
+/start-quiz: Fetches the questions for the selected category.\
+/submit-question: Submits the user's answer and returns if it is correct.\
+/finish-quiz: Returns the final score and total time taken for the quiz.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend Setup: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+CORS is enabled to allow requests from the frontend.\
+Body Parsing is enabled for handling JSON data in API requests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Frontend Overview
 
-### `npm run eject`
+The frontend is built with React and uses Axios for making API calls to the Express backend.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Components:
+**App Component:** The main application component that manages the flow between different screens (Home, Quiz, Result). \
+**Home Component:** The starting screen where users can select a category and start the quiz. \
+**Quiz Component:** Displays the current question, allows users to select an answer, and tracks the quiz progress. \
+**Result Component:** Shows the final score and time taken, with an option to restart the quiz. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### State Management:
+The app uses useState to manage the current screen, questions, score, and total time taken. \
+The quiz progresses through different states: home → quiz → result. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to Run the Project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Steps:
 
-## Learn More
+**Clone the repository:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+git clone https://github.com/RituParmar-58/Quiz-Web-App.git 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Install the dependencies for both backend and frontend:** 
 
-### Code Splitting
+**Backend:** \
+npm install react-router-dom \
+npm install react-app-rewired \
+npm install cors \
+npm install express \
+npm install axios 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Start the backend server:**
 
-### Analyzing the Bundle Size
+node server.js \
+The backend will run on [http://localhost:3001](http://localhost:3001).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Start the frontend server:**
 
-### Making a Progressive Web App
+npm start \
+The frontend will run on [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**1. GET /start-quiz?category={category}**
+Starts the quiz and fetches questions based on the selected category.\
+Query Parameters: \
+category: The quiz category (javascript, react, css, html).
 
-### Deployment
+**2. POST /submit-question**
+Submits the selected answer for a particular question. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**3. POST /finish-quiz**
+Finishes the quiz and returns the final score and total time.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies Used
+**Backend:**
+Express.js: For handling API requests.\
+CORS: For allowing cross-origin requests.
+
+**Frontend:**
+React: For building user interfaces.\
+Axios: For making API requests to the backend.
+
+
+
+

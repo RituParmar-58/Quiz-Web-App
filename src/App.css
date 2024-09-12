@@ -106,12 +106,15 @@ body {
   .category-select, .start-button {
     font-size: 14px;
   }
+  .next-btn{
+    width: 90% !important;
+  }
 }
 
 .quiz-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: flex-end;
   height: 100vh;
   position: relative;
@@ -158,9 +161,10 @@ background-color: #AF9CF3;
 }
 
 
+
 .progress-circle {
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 50%;
   z-index: 1000;
   transform: translateX(-50%);
@@ -217,7 +221,7 @@ label {
   border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
-  width: 30%;
+  width: 23%;
   margin-top: 20px; 
   position: fixed; 
   bottom: 0px; 
@@ -230,7 +234,75 @@ label {
   background-color: #c6bde6;
   cursor: not-allowed;
 }
+.finish{
+  position: fixed; 
+  bottom: 0px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
 .question-mr{
   margin-top: 20px;
   margin-bottom: 35px;
 }
+
+.result-container {
+  text-align: center;
+}
+
+.circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  
+  margin: 0 auto;
+}
+
+.background-circle {
+  stroke: yellow;
+}
+
+.progress-circle1 {
+  stroke: green;
+  transition: stroke-dashoffset 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.percentage-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+.score-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.correct, .incorrect {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.green-dot {
+  background-color: #4caf50;
+}
+
+.red-dot {
+  background-color: #f44336;
+}
+

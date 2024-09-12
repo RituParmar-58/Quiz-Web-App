@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import '../App.css'; 
 
@@ -40,7 +38,7 @@ function Quiz({ questions, submitAnswer, finishQuiz }) {
     <div className="quiz-container">
       
       <div className="progress-circle">
-        <span style={{fontSize : "50px"}}>{currentQuestionIndex + 1}</span>/<span>{questions.length}</span>
+        <span style={{fontSize : "50px"}}><b>{currentQuestionIndex + 1}</b></span>/<span>{questions.length}</span>
       </div>
       <div className="quiz-modal">
         <h2 className='question-mr'>{currentQuestion.question}</h2>

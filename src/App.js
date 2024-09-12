@@ -11,19 +11,20 @@ function App() {
   const [totalTime, setTotalTime] = useState(0);
   const [category, setCategory] = useState('javascript');
   const [screen, setScreen] = useState('home');
+  const BASE_URL = process.env.BASE_URL
 
   const startQuiz = async () => {
-    const res = await axios.get(`http://localhost:3001/start-quiz?category=${category}`);
+    const res = await axios.get(`${BASE_URL}/start-quiz?category=${category}`);
     setQuestions(res.data.questions);
     setScreen('quiz');
   };
 
   const submitAnswer = async (questionId, selectedOptions, timeTaken) => {
-    await axios.post('http://localhost:3001/submit-question', { questionId, selectedOptions, timeTaken });
+    await axios.post(`${BASE_URL}/submit-question`, { questionId, selectedOptions, timeTaken });
   };
 
   const finishQuiz = async () => {
-    const res = await axios.post('http://localhost:3001/finish-quiz');
+    const res = await axios.post(`${BASE_URL}/finish-quiz`);
     setScore(res.data.correctAnswers);
     setTotalTime(res.data.totalTime);
     setScreen('result');
